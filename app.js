@@ -34,7 +34,7 @@ app.use(express.json({ limit: "50mb" }))
 app.use(express.urlencoded({ limit: "50mb" }))
 
 // Database Connection
-const uri = 'mongodb+srv://AbdurRahim:<password>@cluster0.qooqrpl.mongodb.net/Inventory-Mgmt?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://AbdurRahim:<password>@cluster0.ospelv8.mongodb.net/Inventory-Mgmt?retryWrites=true&w=majority'
 const options = { user: 'AbdurRahim', pass: 'up3UWfVQsKvmUpC7' }
 mongoose.connect(uri, options)
     .then(() => {
