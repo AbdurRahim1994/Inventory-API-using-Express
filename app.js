@@ -12,19 +12,26 @@ const helmet = require('helmet')
 const hpp = require('hpp')
 const xssClean = require('xss-clean')
 
-const corsOptions = {
+/*const corsOptions = {
     origin: '*',
     methods: '*',
     credentials: true,
     optionsSuccessStatus: 204,
- };
+ };*/
 
 // Security Middleware Implement
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(expressMongoSanitize())
 app.use(helmet())
 app.use(hpp())
 app.use(xssClean())
+
+app.use(function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*'),
+    res.header('Access-Control-Allow-Methods', '*'),
+    res.header('Access-Control-Allow-Headers', '*'),
+    next();
+})
 
 // Body Parser Implement
 app.use(bodyParser.json())
