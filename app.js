@@ -12,12 +12,12 @@ const helmet = require('helmet')
 const hpp = require('hpp')
 const xssClean = require('xss-clean')
 
-/*const corsOptions = {
-    origin: '*',
-    methods: '*',
-    credentials: true,
-    optionsSuccessStatus: 204,
- };*/
+// const corsOptions = {
+//     origin: '*',
+//     methods: '*',
+//     credentials: true,
+//     optionsSuccessStatus: 204,
+//  };
 
 // Security Middleware Implement
 app.use(cors())
@@ -26,12 +26,12 @@ app.use(helmet())
 app.use(hpp())
 app.use(xssClean())
 
-app.use(function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*'),
-    res.header('Access-Control-Allow-Methods', '*'),
-    res.header('Access-Control-Allow-Headers', 'Content-Type'),
-    next();
-})
+// app.use(function(req, res, next){
+//     res.header('Access-Control-Allow-Origin', '*'),
+//     res.header('Access-Control-Allow-Methods', '*'),
+//     res.header('Access-Control-Allow-Headers', 'Content-Type'),
+//     next();
+// })
 
 // Body Parser Implement
 app.use(bodyParser.json())
