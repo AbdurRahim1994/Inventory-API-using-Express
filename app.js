@@ -12,8 +12,15 @@ const helmet = require('helmet')
 const hpp = require('hpp')
 const xssClean = require('xss-clean')
 
+const corsOptions = {
+    origin: '*',
+    methods: '*',
+    credentials: true,
+    optionsSuccessStatus: 204,
+ };
+
 // Security Middleware Implement
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(expressMongoSanitize())
 app.use(helmet())
 app.use(hpp())
