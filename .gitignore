@@ -3,6 +3,3 @@
 
 #production
 /build
-
-#vercel
-/vercel.json
